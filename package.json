@@ -3,7 +3,7 @@
     "version": "2.1.0",
     "description": "Advanced WhatsApp Ai",
     "main": "index.js",
-    
+    "type": "module",
     "directories": {
         "lib": "lib",
         "src": "src",
