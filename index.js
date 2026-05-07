@@ -219,7 +219,7 @@ if (process.env.RENDER === 'true') {
   setInterval(() => {
     if (serverUrl) {
       console.log(chalk.blue(`Pinging server URL: ${serverUrl}`));
-      require('child_process').execFile('curl', ['-s', serverUrl], (error, stdout, stderr) => {
+      execFile(
         if (error) {
           console.error(chalk.red(`Server ping error: ${stderr}`));
         } else {
@@ -227,9 +227,9 @@ if (process.env.RENDER === 'true') {
         }
       });
     } else {
-      const hostname = require('os').hostname();
+      const hostname = os.hostname()
       console.log(chalk.blue(`Pinging hostname: ${hostname}`));
-      require('child_process').execFile('ping', ['-c', '1', hostname], (error, stdout, stderr) => {
+      execFile(
         if (error) {
           console.error(chalk.red(`Ping error: ${stderr}`));
         } else {
